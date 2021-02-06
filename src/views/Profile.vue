@@ -38,7 +38,7 @@ methods: {
   edit() {
     if (!this.active) {
       axios
-        .put("herokuのURL/api/user", {
+        .put("https://secure-badlands-14329.herokuapp.com/api/user", {
           email: this.$store.state.user.email,
           profile: this.profile,
         })

@@ -74,7 +74,7 @@ export default {
         .then((response) =>{
           console.log(response);
           this.$router.go({
-            path: $router.currentRoute.path,
+            path: this.$router.currentRoute.path,
             force: true,
           });
         });

@@ -27,7 +27,7 @@ export default {
             share: this.share,
           })
           .then((response) => {
-            cnsole.log(response);
+            console.log(response);
             alert("シェアしました");
             this.share = "";
             this.$router.go({
