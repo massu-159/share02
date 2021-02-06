@@ -36,7 +36,7 @@ export default new Vuex.Store({
         params: { email: email, },
       });
       commit("auth", responseLogin.data.auth);
-      commit("user", responseLogin.data.data[0]);
+      commit("user", responseUser.data.data[0]);
       router.replace("/home");
     },
     logout({ commit }) {
@@ -44,7 +44,7 @@ export default new Vuex.Store({
         .post("https://secure-badlands-14329.herokuapp.com/api/logout", {
           auth: this.state.auth,
         })
-        .then((Response) => {
+        .then((response) => {
           console.log(response);
           commit("logout", response.data.auth);
           router.replace("/")
