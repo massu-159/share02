@@ -23,7 +23,7 @@ export default {
       } else {
         axios
           .post("https://secure-badlands-14329.herokuapp.com/api/shares", {
-            user_id: this.$store.state.userid,
+            user_id: this.$store.state.user.id,
             share: this.share,
           })
           .then((response) => {

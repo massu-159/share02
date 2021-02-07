@@ -33,28 +33,29 @@ export default {
       name: this.$store.state.user.name,
       profile: this.$store.state.user.profile,
     };
-},
-methods: {
-  edit() {
-    if (!this.active) {
-      axios
-        .put("https://secure-badlands-14329.herokuapp.com/api/user", {
+  },
+  methods: {
+    edit() {
+      if (!this.active) {
+        axios
+          .put("https://secure-badlands-14329.herokuapp.com/api/user", {
           email: this.$store.state.user.email,
           profile: this.profile,
         })
-        .then((response) => {
-          this.$store.dispatch("changeUserData", {
+          .then((response) => {
+            this.$store.dispatch("changeUserData", {
             profile: this.profile,
-          });
-          console.log(response);
-      });
-    }
-    this.active = !this.active;
+            });
+            console.log(response);
+        });
+      }
+      this.active = !this.active;
+    },
   },
-},
-components: {
-  SideNavi, Message
-}
+  components: {
+    SideNavi, 
+    Message,
+  },
 };
 </script>
 

@@ -14,10 +14,10 @@
         </div>
         <div class="message" v-for="(comment, index) in data" :key="index">
           <div class="flex">
-            <p class="name">{{comment.name}}</p>
+            <p class="name">{{comment.comment_user.name}}</p>
           </div>
           <div>
-            <p class="text">{{comment.content}}</p>
+            <p class="text">{{comment.comment.content}}</p>
           </div>
         </div>
         <input type="text" v-model="content">
@@ -38,9 +38,7 @@ export default {
   data(){
     return {
       content: "",
-      data: [{
-        name: "太郎", like: [], share: "初めまして"
-      }]
+      data: "",
     };
   },
   methods: {
@@ -72,7 +70,8 @@ export default {
     this.comment();
   },
   components: {
-    SideNavi, Message
+    SideNavi, 
+    Message,
   }
 };
 </script>

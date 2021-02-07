@@ -44,14 +44,14 @@ const routes = [
       requiresAuth: true,
     },
     props: true,
-  }
-]
+  },
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some((record) => record.meta.requiresAuth) && !store.state.auth) {
@@ -66,4 +66,4 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-export default router
+export default router;

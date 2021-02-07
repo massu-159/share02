@@ -12,7 +12,7 @@
             params: {id: value.item.id},
           })" v-if="profile">
         </div>
-        <p class="text">{{value.share}}</p>
+        <p class="text">{{value.item.share}}</p>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ export default {
     },
     del(index) {
       axios
-        .delete("https://secure-badlands-14329.herokuapp.com/api/shares/" + this.share[index].item.id)
+        .delete("https://secure-badlands-14329.herokuapp.com/api/shares/" + this.shares[index].item.id)
         .then((response) =>{
           console.log(response);
           this.$router.go({
